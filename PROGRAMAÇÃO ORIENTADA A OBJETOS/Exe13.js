@@ -7,7 +7,6 @@ const { Texto } = require("./Uteis")
 function principal(){
     let n = Texto('Informe um número: ')
     let d = Texto('Informe um número entre 0 e 9: ')
-    let num = String(n)
     let contador = 0;
     if(d >= 0 && d <= 9){
       for(x of num){
