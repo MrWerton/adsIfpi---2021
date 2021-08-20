@@ -18,5 +18,6 @@ int main(){
       };
       divisores = 1;
     };
-    }
-}
+    };
+    return 0;
+};
