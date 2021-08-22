@@ -6,7 +6,7 @@ const { Numero } = require('./Uteis')
 function principal(){
     let vetor = [];
     let quantidadePar = 0;
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 20; i++){
       vetor[i] = Numero(`Informe um valor do vetor ${i}: `)
     }
     for(x of vetor){
