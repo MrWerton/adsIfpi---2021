@@ -7,7 +7,7 @@ function principal(){
   let frase = Texto('Informe um palavra: ')
   let string = ''
   for(x of frase){
-    if(!(x == "a" || x == "e" || x == "i" || x == "o" || x == "u")){
+    if(!(x == "a" || x == "e" || x == "i" || x == "o" || x == "u" || x == "A" || x == "E" || x == "I" || x == "O" || x == "U")){
       string += x
     }
   }
