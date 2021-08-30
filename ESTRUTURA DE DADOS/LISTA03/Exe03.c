@@ -3,50 +3,7 @@
 #include <locale.h>
 
 int main() {
-  /*
-    int tamanhoA, tamanhoB, i, j,n;
-    printf("Informe o tamanho do vetorA: ");
-    scanf("%d", &tamanhoA);
-    printf("Informe o tamanho do vetorB: ");
-    scanf("%d", &tamanhoB);
-    
-    int VetorA[tamanhoA], VetorB[tamanhoB];
-
-    for(i = 0; i < tamanhoA; i++) {
-        printf("Digite o elemento %d: do vetorA: ",i);
-        scanf("%d", &VetorA[i]);
-    };
-     for(j = 0; j < tamanhoB; j++) {
-        printf("Digite o elemento %d do vetor B: ",j);
-        scanf("%d", &VetorB[j]);
-    }
-
-    int interseccao[0];
-    printf("Interseccao [");
-    for(i = 0; i < tamanhoA; i++){
-        for(j = 0; j < tamanhoB ; j++){
-            if(VetorA[i] == VetorB[j]){
-                printf(" %d ", VetorA[i]);               
-                printf(" %d ", VetorB[i]);               
-             };
-        };
-    };
-    int VetorC = VetorB+VetorA;
-    printf("]\n");
-    int Uniao[0];
-    int Uniao_1[0];
-    int Uniao_2[0];
-    printf("União [");
-
-   for(n = 0; n < tamanhoC; n++) {
-        printf(" %d ",VetorC[n]);
-
-      };
-    printf("}");
-    printf("]\n");
-
-    return 0;
-    */
+  
    int tamanhoA, tamanhoB, i, j,n;
     printf("Informe o tamanho do vetorA: ");
     scanf("%d", &tamanhoA);
