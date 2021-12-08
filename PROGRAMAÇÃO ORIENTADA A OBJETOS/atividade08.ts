@@ -75,6 +75,8 @@ class Conta {
 		contaDestino.depositar(valor);
 	}
 }
+/*4b - foi necessário adaptar*/
+
 
 
 
@@ -182,4 +184,3 @@ banco.inserir(c1);
 console.log(banco.consultar("1").get_Saldo());
 
 
-/*As classes sofreram alteração*/
