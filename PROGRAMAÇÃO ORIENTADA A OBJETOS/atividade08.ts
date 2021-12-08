@@ -180,3 +180,6 @@ saldo:${c1.get_Saldo()}
 let banco: Banco = new Banco();
 banco.inserir(c1);
 console.log(banco.consultar("1").get_Saldo());
+
+
+/*As classes sofreram alteração*/
