@@ -1,16 +1,15 @@
-
 //questão 1
 
 class Calculadora {
 	constructor(
-		private numero: number,
-		private numero2: number
+		private _numero: number,
+		private _numero2: number
 		){}
 		somar():void{
-			console.log(`Resultado da soma: ${this.numero + this.numero2}`)
+			console.log(`Resultado da soma: ${this._numero + this._numero2}`)
 		}
 		subtrair():void{
-			console.log(`Resultado da subtração: ${this.numero - this.numero2}`)
+			console.log(`Resultado da subtração: ${this._numero - this._numero2}`)
 		}
 }
 
@@ -24,22 +23,22 @@ calculadora.subtrair()
 
 class Hora {
     constructor(
-		private hr: number,
-    private min: number,
-    private seg: number
+		private _hr: number,
+		private _min: number,
+		private _seg: number
 		) {}
 		public ler_Segundo(): void{
-			console.log(`Minuto: ${this.seg}`)
+			console.log(`Minuto: ${this._seg}`)
 		}
-    public Ler_Minuto(): void{
-			console.log(`Segundo: ${this.min}`)
-    }
+    	public Ler_Minuto(): void{
+			console.log(`Segundo: ${this._min}`)
+		}
 		public Ler_Hora(): void{
-			console.log(`Hora: ${this.hr}`)
+			console.log(`Hora: ${this._hr}`)
 		}
-    public Ler_Hora_Completa():void{
-        console.log(`Horário: ${this.hr} : ${this.min} : ${this.seg}`)
-    }
+    	public Ler_Hora_Completa():void{
+    		console.log(`Horário: ${this._hr} : ${this._min} : ${this._seg}`)
+    	}
 }
 
 const hora = new Hora(4,10, 30)
@@ -51,33 +50,30 @@ hora.Ler_Hora_Completa()
 
 //questão 4
 
-
 class Conta {
 	constructor(
-		private numero: string, 
-		private saldo: number) {}
-	public get_Saldo(){
-		return this.saldo
-	}
-	public get_Numero(){
-		return this.numero
-	}
-	public sacar(valor: number): void {
-		this.saldo = this.saldo - valor;
-	}
+		private _numero: string, 
+		private _saldo: number) {}
+		public get Saldo(){
+			return this._saldo
+		}
+		public get Numero(){
+			return this._numero
+		}
+		public sacar(valor: number): void {
+			this._saldo = this._saldo - valor;
+		}
 
-	public depositar(valor: number): void {
-		this.saldo = this.saldo + valor;
-	}
-
-	public transferir(contaDestino: Conta, valor: number): void {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
-	}
+		public depositar(valor: number): void {
+			this._saldo = this._saldo + valor;
+		}
+		public transferir(contaDestino: Conta, valor: number): void {
+			this.sacar(valor);
+			contaDestino.depositar(valor);
+		}
 }
-/*4b - foi necessário adaptar*/
 
-
+//4-b  foi necessário adapatar
 
 
 //questão 3
@@ -85,9 +81,8 @@ class Conta {
 
 class Banco {
 	private contas: Conta[] = [];
-	
 	inserir(conta: Conta): void {
-    if(!this.consultar(conta.get_Numero())){
+    if(!this.consultar(conta.Numero)){
       this.contas.push(conta);
       console.log("Inserido com sucesso");
     }else{
@@ -98,7 +93,7 @@ class Banco {
 public consultar(numero: String): Conta {
 		let contaConsultada!: Conta;
 		for (let conta of this.contas) {
-			if (conta.get_Numero() == numero) {
+			if (conta.Numero == numero) {
 				contaConsultada = conta;
 				break;
 			}
@@ -109,7 +104,7 @@ public consultar(numero: String): Conta {
 	private consultarPorIndice(numero: String): number {
 		let indice: number = -1;
 		for (let i: number = 0; i < this.contas.length; i++) {
-			if (this.contas[i].get_Numero() == numero) {
+			if (this.contas[i].Numero == numero) {
 				indice = i;
 				break;
 			}
@@ -118,11 +113,11 @@ public consultar(numero: String): Conta {
 	}
 
 	public alterar(conta: Conta): void {
-		let indice: number = this.consultarPorIndice(conta.get_Numero());
+		let indice: number = this.consultarPorIndice(conta.Numero);
 		if (indice != -1) {
 			this.contas[indice] = conta;
 		}
-	}
+		}
 
 	public excluir(numero: string): void {
 		let indice: number = this.consultarPorIndice(numero);
@@ -133,7 +128,6 @@ public consultar(numero: String): Conta {
 			this.contas.pop();
 		} 
 	}
-
 	public depositar(numero: String, valor: number): void {
 		let contaConsultada = this.consultar(numero);
 
@@ -148,13 +142,13 @@ public consultar(numero: String): Conta {
 			contaConsultada.sacar(valor);
 		}
 	}
-  public transferencia(c1: string, c2: string, valor: number): void {
-    let conta_origem = this.consultar(c1);
-    let conta_destino = this.consultar(c2);
-    if(conta_origem != null && conta_destino != null){
-      conta_origem.transferir( conta_destino, valor);
-    }
-}
+	public transferencia(c1: string, c2: string, valor: number): void {
+		let conta_origem = this.consultar(c1);
+		let conta_destino = this.consultar(c2);
+		if(conta_origem != null && conta_destino != null){
+			conta_origem.transferir( conta_destino, valor);
+		}
+	}
   public totalContas():number{
     let value:number = 0;
     for(let conta of this.contas){
@@ -165,7 +159,7 @@ public consultar(numero: String): Conta {
   public AllMoney():number{
     let value:number = 0;
     for(let conta of this.contas){
-        value += conta.get_Saldo();
+        value += conta.Saldo;
     }
     return value;
   }
@@ -176,11 +170,9 @@ public consultar(numero: String): Conta {
 
 let c1: Conta = new Conta("1",100);
 console.log(`
-numero da conta:${c1.get_Numero()} 
-saldo:${c1.get_Saldo()} 
+numero da conta:${c1.Numero} 
+saldo:${c1.Saldo} 
 `)
 let banco: Banco = new Banco();
 banco.inserir(c1);
-console.log(banco.consultar("1").get_Saldo());
-
-
+console.log(banco.consultar("1").Saldo);
