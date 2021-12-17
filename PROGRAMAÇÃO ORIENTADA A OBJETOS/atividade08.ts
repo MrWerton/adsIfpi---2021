@@ -54,10 +54,10 @@ class Conta {
 	constructor(
 		private _numero: string, 
 		private _saldo: number) {}
-		public get Saldo(){
+		public get Saldo():number{
 			return this._saldo
 		}
-		public get Numero(){
+		public get Numero():string{
 			return this._numero
 		}
 		public sacar(valor: number): void {
