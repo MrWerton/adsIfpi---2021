@@ -3,7 +3,7 @@
 
 class Calculadora {
 	constructor(
-		public numero: number,
+		private numero: number,
 		private numero2: number
 		){}
 		somar():void{
