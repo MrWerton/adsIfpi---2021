@@ -8,21 +8,25 @@ class FetchRequest {
     set url(value:string){
         this._url = value
     }
-    public getBody=()=>{
-        axios.get(this.GetUrl).then((response)=>{
-            console.log("body")
-            console.log(response)
-        }).catch((err)=>{
-            console.log(err)
-        })
+    public getBody=async()=>{
+        try { 
+            const response = await axios.get(this.GetUrl)
+                console.log("body")
+                console.log(response)
+        } catch (Error) {
+            console.log(Error)
+        }
+     
     }
-    public getStatus=()=>{
-        axios.get(this.GetUrl).then((response)=>{
-            console.log("status")
-            console.log(response.status)
-        }).catch((err)=>{
-            console.log(err)
-        })
+    public getStatus=async()=>{
+        try{
+          const {status} =await axios.get(this.GetUrl);
+          console.log("status")
+          console.log(status)
+        }catch(Error){
+            console.log(Error)
+        }
+      
     }
     public getLength=()=>{
         axios.get(this.GetUrl).then((response)=>{
@@ -70,9 +74,9 @@ class FetchRequest {
 
 const fetch =new FetchRequest('https://www.ifpi.edu.br/')
 
-fetch.getData()
-fetch.getStatus()
+fetch.getBody()
+ fetch.getStatus()/*
 fetch.getBody() 
 fetch.getUrl()
 fetch.getServer()
-fetch.DownloadImg('https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80', "png") 
+fetch.DownloadImg('https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80', "png")   */
