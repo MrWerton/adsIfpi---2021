@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100v2;
+    min-height: 100vh;
+    font-size: 120%;
+    background-color: #f2f2f2;
+}
+h1{
+    background-color:rgb(133, 25, 68) ;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+h2{
+    margin: 10px 0;
+}
+p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+#main{
+    padding: 30px;
+}

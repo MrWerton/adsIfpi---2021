@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100v2;
+    min-height: 100vh;
+    background-color: #dadada;
+}
+h2{
+    margin: 30px 5px;
+}
+body p{
+    text-align: justify;
+}
+p{
+    margin-top: 10px;
+}
+#header{
+    position: sticky;
+    top: 0;
+    background-color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+#main{
+    width: 80%;
+    margin: 0 auto;
+}
